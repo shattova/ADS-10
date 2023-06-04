@@ -20,8 +20,7 @@ class Tree {
             CHvect.push_back(root->value);
         if (root->Nvect.empty()) {
             permutes.push_back(CHvect);
-        }
-        else {
+        } else {
             for (Node* child : root->Nvect) {
                 findPermutes(child, CHvect);
             }
@@ -29,7 +28,7 @@ class Tree {
     }
     void insert(Node* root, const std::vector<char>& CHvect) {
         for (char ch : CHvect) {
-            Node* tmpl= new Node;
+            Node* tmpl = new Node;
             tmpl->value = ch;
             root->Nvect.push_back(tmpl);
             std::vector<char> Chars(CHvect);
